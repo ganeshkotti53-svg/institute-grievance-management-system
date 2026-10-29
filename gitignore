@@ -1,0 +1,13 @@
+# Private configuration
+.env
+config.local.php
+
+# Temporary files
+*.log
+*.tmp
+
+# Uploaded user files
+uploads/*
+
+# Keep the uploads folder
+!uploads/.gitkeep

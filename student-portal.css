@@ -1,0 +1,532 @@
+:root {
+    --portal-ink: #172b4d;
+    --portal-muted: #66758b;
+    --portal-brand: #155eef;
+    --portal-brand-dark: #1048bd;
+    --portal-line: #e6ebf2;
+    --portal-surface: #fff;
+    --portal-canvas: #f4f7fb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    background: var(--portal-canvas);
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    color: var(--portal-ink);
+    background: var(--portal-canvas);
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+header,
+.navbar {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    padding: 12px max(24px, calc((100% - 1160px) / 2));
+    border-bottom: 1px solid var(--portal-line);
+    color: var(--portal-ink);
+    background: var(--portal-surface);
+}
+
+.logo {
+    flex: 0 0 auto;
+    color: var(--portal-ink);
+    font-size: 19px;
+    font-weight: 750;
+    letter-spacing: -.04em;
+}
+
+nav,
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+nav a,
+.nav-links a {
+    display: inline-block;
+    margin: 0;
+    padding: 10px 12px;
+    border-radius: 9px;
+    color: #53637a;
+    font-size: 13px;
+    font-weight: 650;
+    text-decoration: none;
+    transition: color .18s ease, background .18s ease;
+}
+
+nav a:hover,
+.nav-links a:hover {
+    color: var(--portal-brand);
+    background: #eef4ff;
+    text-decoration: none;
+}
+
+.hero,
+.hero-banner {
+    padding: 34px max(24px, calc((100% - 1160px) / 2));
+    color: #fff;
+    background: linear-gradient(115deg, #123b82 0%, #155eef 60%, #4388ff 100%);
+}
+
+.hero h1,
+.hero-banner h1 {
+    margin: 0 0 8px;
+    color: #fff;
+    font-size: clamp(25px, 4vw, 32px);
+    font-weight: 700;
+    letter-spacing: -.035em;
+}
+
+.hero p,
+.hero-banner p {
+    margin: 0;
+    color: #e2ecff;
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.container,
+.page-container {
+    width: min(1160px, calc(100% - 48px));
+    max-width: 1160px;
+    margin: 34px auto 42px;
+    padding: 0;
+}
+
+h1,
+.page-title {
+    margin: 0 0 8px;
+    color: var(--portal-ink);
+    font-size: clamp(27px, 4vw, 32px);
+    font-weight: 700;
+    letter-spacing: -.035em;
+}
+
+h2,
+.section-title,
+.card-title {
+    color: var(--portal-ink);
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -.02em;
+}
+
+.subtitle,
+.welcome {
+    margin: 0 0 24px;
+    color: var(--portal-muted);
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.content-card,
+.card,
+.table-card,
+.profile-card,
+.feedback-card,
+.complaint-card,
+.no-complaints,
+.grievance-item {
+    border: 1px solid var(--portal-line);
+    border-radius: 15px;
+    background: var(--portal-surface);
+    box-shadow: 0 3px 12px rgba(23, 43, 77, .045);
+}
+
+.content-card,
+.card,
+.profile-card,
+.feedback-card,
+.table-card,
+.complaint-card,
+.no-complaints,
+.grievance-item {
+    padding: 24px;
+}
+
+.complaint-card,
+.grievance-item {
+    margin-bottom: 16px;
+}
+
+.section-title,
+.card-title,
+.profile-card h2,
+.feedback-card h2,
+.complaint-card h2,
+.grievance-item h3,
+.no-complaints h2 {
+    margin: 0 0 18px;
+    color: var(--portal-ink);
+}
+
+.form-group {
+    margin-bottom: 19px;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    color: #34445c;
+    font-size: 13px;
+    font-weight: 650;
+}
+
+input:not([type="hidden"]),
+select,
+textarea,
+.form-control,
+.remarks-input {
+    width: 100%;
+    min-height: 44px;
+    padding: 11px 13px;
+    border: 1px solid #d5dce7;
+    border-radius: 9px;
+    outline: none;
+    color: var(--portal-ink);
+    background: #fff;
+    font: inherit;
+    font-size: 14px;
+    transition: border-color .18s ease, box-shadow .18s ease;
+}
+
+textarea,
+textarea.form-control {
+    min-height: 130px;
+    resize: vertical;
+}
+
+input:not([type="hidden"]):focus,
+select:focus,
+textarea:focus,
+.form-control:focus,
+.remarks-input:focus {
+    border-color: #84adff;
+    box-shadow: 0 0 0 3px rgba(21, 94, 239, .12);
+    background: #fff;
+}
+
+button,
+.submit-btn,
+.btn,
+.back,
+.back-link,
+.btn-back,
+.btn-submit,
+.btn-vote,
+.btn-voted,
+.btn-confirm,
+.btn-reject,
+.btn-escalate {
+    display: inline-flex;
+    min-height: 42px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 17px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    color: #fff;
+    background: var(--portal-brand);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+
+button:hover,
+.submit-btn:hover,
+.btn:hover,
+.back:hover,
+.back-link:hover,
+.btn-back:hover,
+.btn-submit:hover,
+.btn-vote:hover {
+    color: #fff;
+    background: var(--portal-brand-dark);
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+.btn-confirm,
+.btn-voted {
+    background: #168a5b;
+}
+
+.btn-confirm:hover,
+.btn-voted:hover {
+    background: #117249;
+}
+
+.btn-reject,
+.btn-escalate {
+    background: #c93636;
+}
+
+.btn-reject:hover,
+.btn-escalate:hover {
+    background: #a92b2b;
+}
+
+.btn-voted {
+    cursor: not-allowed;
+}
+
+.message,
+.success,
+.error,
+.alert {
+    margin-bottom: 18px;
+    padding: 13px 16px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.success,
+.alert-success {
+    border-color: #b7e4ce;
+    color: #176b45;
+    background: #effaf4;
+}
+
+.error,
+.alert-danger {
+    border-color: #f1c3c0;
+    color: #a52b24;
+    background: #fff4f2;
+}
+
+.alert-warning {
+    border-color: #f4dda1;
+    color: #805b08;
+    background: #fff9e8;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #34445c;
+    font-size: 13px;
+}
+
+th {
+    padding: 13px 14px;
+    color: #53637a;
+    background: #f5f8fc;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .055em;
+    text-align: left;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+td {
+    padding: 13px 14px;
+    border-bottom: 1px solid #edf0f5;
+    vertical-align: middle;
+}
+
+tr:hover td {
+    background: #fafcff;
+}
+
+.status,
+.status-badge,
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.pending,
+.badge-pending {
+    color: #805b08;
+    background: #fff4cf;
+}
+
+.inprogress,
+.badge-level {
+    color: #174ea6;
+    background: #eaf2ff;
+}
+
+.resolved,
+.badge-resolved {
+    color: #176b45;
+    background: #e8f7ef;
+}
+
+.rejected,
+.badge-escalated,
+.badge-closed {
+    color: #a52b24;
+    background: #fff0ee;
+}
+
+.details p,
+.grievance-item p,
+.complaint-card p {
+    margin: 9px 0;
+    color: #53637a;
+    font-size: 13px;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+}
+
+.grievance-footer,
+.action-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 14px;
+    border-top: 1px solid var(--portal-line);
+}
+
+.vote-count {
+    color: #53637a;
+    font-size: 13px;
+    font-weight: 650;
+}
+
+.verification-actions,
+.escalation-box {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--portal-line);
+}
+
+.remarks-input,
+.form-control {
+    margin-bottom: 12px;
+}
+
+.empty-message {
+    padding: 36px 16px;
+    color: var(--portal-muted);
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+footer {
+    margin-top: 32px;
+    padding: 18px 24px;
+    border-top: 1px solid var(--portal-line);
+    color: var(--portal-muted);
+    background: var(--portal-surface);
+    font-size: 12px;
+    text-align: center;
+}
+
+.complaint-image {
+    width: 72px;
+    height: 54px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #84adff;
+    outline-offset: 3px;
+}
+
+@media (max-width: 760px) {
+    header,
+    .navbar {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 20px;
+    }
+
+    nav,
+    .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    nav a,
+    .nav-links a {
+        padding: 9px 10px;
+    }
+
+    .hero,
+    .hero-banner {
+        padding: 28px 24px;
+    }
+
+    .container,
+    .page-container {
+        width: calc(100% - 32px);
+        margin: 24px auto 32px;
+    }
+
+    .content-card,
+    .card,
+    .profile-card,
+    .feedback-card,
+    .table-card,
+    .complaint-card,
+    .no-complaints,
+    .grievance-item {
+        padding: 19px;
+    }
+
+    .table-card {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 650px;
+    }
+}
+
+@media (max-width: 480px) {
+    .action-buttons,
+    .grievance-footer {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .action-buttons button,
+    .grievance-footer form,
+    .grievance-footer button {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}

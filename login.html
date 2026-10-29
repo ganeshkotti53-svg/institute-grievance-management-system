@@ -1,0 +1,73 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Login</title>
+
+<link rel="stylesheet" href="auth.css">
+
+<script>
+function validateLogin(){
+
+    var email = document.forms["loginForm"]["email"].value;
+    var password = document.forms["loginForm"]["password"].value;
+
+    if(email==""){
+        alert("Enter Email");
+        return false;
+    }
+
+    if(password==""){
+        alert("Enter Password");
+        return false;
+    }
+
+    return true;
+}
+</script>
+
+</head>
+
+<body class="auth-page">
+
+<div class="container">
+
+    <div class="auth-brand">
+        <span class="auth-brand-mark">I</span>
+        <span>Institute Grievance Management<small>Student portal</small></span>
+    </div>
+
+    <h2>Student Login</h2>
+    <p class="auth-description">Sign in to submit grievances and follow up on your requests.</p>
+
+    <form name="loginForm"
+          action="login.php"
+          method="POST"
+          onsubmit="return validateLogin()">
+
+        <input type="email"
+               name="email"
+               placeholder="Email"
+               required>
+
+        <input type="password"
+               name="password"
+               placeholder="Password"
+               required>
+
+        <input type="submit"
+               value="Login">
+
+    </form>
+
+    <p>
+        Don't have an account?
+        <a href="register.html">Create account</a>
+        <a href="forgot_password.php">Forgot password?</a>
+    </p>
+
+</div>
+
+</body>
+</html>

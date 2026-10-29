@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Registration</title>
+
+<link rel="stylesheet" href="auth.css">
+
+<script>
+function validateForm(){
+
+let name=document.forms["regForm"]["name"].value;
+let email=document.forms["regForm"]["email"].value;
+let roll=document.forms["regForm"]["roll"].value;
+let department=document.forms["regForm"]["department"].value;
+let password=document.forms["regForm"]["password"].value;
+let confirm=document.forms["regForm"]["confirm"].value;
+
+if(name==""){
+alert("Enter Full Name");
+return false;
+}
+
+if(email==""){
+alert("Enter Email");
+return false;
+}
+
+let pattern=/^[^ ]+@[^ ]+\.[a-z]{2,}$/i;
+
+if(!email.match(pattern)){
+alert("Invalid Email");
+return false;
+}
+
+if(roll==""){
+alert("Enter Roll Number");
+return false;
+}
+
+if(department==""){
+alert("Enter Department");
+return false;
+}
+
+if(password.length<6){
+alert("Password must contain at least 6 characters");
+return false;
+}
+
+if(password!=confirm){
+alert("Passwords do not match");
+return false;
+}
+
+return true;
+}
+</script>
+
+</head>
+
+<body class="auth-page">
+
+<div class="container">
+
+<div class="auth-brand">
+    <span class="auth-brand-mark">I</span>
+    <span>Institute Grievance Management<small>Student portal</small></span>
+</div>
+
+<h2>Student Registration</h2>
+<p class="auth-description">Create your student account to access grievance support.</p>
+
+<form name="regForm"
+action="register.php"
+method="POST"
+onsubmit="return validateForm()">
+
+<input
+type="text"
+name="name"
+placeholder="Full Name"
+required>
+
+<input
+type="email"
+name="email"
+placeholder="Email"
+required>
+
+<input
+type="text"
+name="roll"
+placeholder="Roll Number"
+required>
+
+<input
+type="text"
+name="department"
+placeholder="Department"
+required>
+
+<input
+type="password"
+name="password"
+placeholder="Password"
+minlength="6"
+required>
+
+<input
+type="password"
+name="confirm"
+placeholder="Confirm Password"
+minlength="6"
+required>
+
+<input
+type="submit"
+value="Register">
+
+</form>
+
+<p>
+Already have an account?
+<a href="login.html">Login</a>
+</p>
+
+</div>
+
+</body>
+</html>

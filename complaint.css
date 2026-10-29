@@ -1,0 +1,48 @@
+body {
+    background: #f0f2f5;
+    font-family: Arial;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+h1 {
+    color: #003366;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+input[type=submit] {
+    background: #003366;
+    color: white;
+    border: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #003366;
+    color: white;
+}
+
+th,
+td {
+    border: 1px solid #cccccc;
+    padding: 10px;
+}
